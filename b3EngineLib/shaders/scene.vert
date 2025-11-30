@@ -7,11 +7,11 @@ layout(set = 0, binding = 0) uniform SceneUBO {
   vec3 lightPos;
 } sceneUBO;
 
-// モデルごと
+// モデル毎
 layout(set = 1, binding = 0) uniform UniformBufferObject {
   mat4 model;
-	mat4 shadowMatrix;
-	uint texIndex;
+  mat4 shadowMatrix;
+  uint texIndex;
 } ubo;
 
 layout(location = 0) in vec3 in_position;
@@ -25,14 +25,14 @@ layout(location = 3) out vec4 out_shadowCoord;
 layout(location = 4) out flat uint out_texIndex;
 
 const mat4 biasMat = mat4( 
-	0.5, 0.0, 0.0, 0.0,
-	0.0, 0.5, 0.0, 0.0,
-	0.0, 0.0, 1.0, 0.0,
-	0.5, 0.5, 0.0, 1.0 );
+  0.5, 0.0, 0.0, 0.0,
+  0.0, 0.5, 0.0, 0.0,
+  0.0, 0.0, 1.0, 0.0,
+  0.5, 0.5, 0.0, 1.0 );
 
 void main()
 {
-	mat4 mvp = sceneUBO.proj * sceneUBO.view * ubo.model;
+  mat4 mvp = sceneUBO.proj * sceneUBO.view * ubo.model;
   gl_Position = mvp * vec4(in_position, 1.0);
 
   out_normal = mat3(ubo.model) * in_normal;
@@ -42,7 +42,7 @@ void main()
   vec3 worldPos = vec3(ubo.model * vec4(in_position, 1.0));
   out_lightDir = sceneUBO.lightPos - worldPos;
 
-  out_shadowCoord = ubo.shadowMatrix * vec4(in_position, 1.0);	
+  out_shadowCoord = ubo.shadowMatrix * vec4(in_position, 1.0);  
 
-	out_texIndex = ubo.texIndex;
+  out_texIndex = ubo.texIndex;
 }
