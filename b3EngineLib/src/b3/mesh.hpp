@@ -1,8 +1,10 @@
-#ifndef __MESH_HPP__
-#define __MESH_HPP__
+#ifndef __MESH2_HPP__
+#define __MESH2_HPP__
 
 #include "common.hpp"
 #include "types.hpp"
+
+namespace b3 {
 
 class Mesh {
   std::vector<Vertex> m_vertices;
@@ -12,15 +14,14 @@ public:
   IndexType addVertex(const Vertex &vertex);
   void addIndex(IndexType index);
 
-  void setColor(const glm::vec3 &color);
-
   const std::vector<Vertex> vertices() const { return m_vertices; }
   const std::vector<IndexType> indices() const { return m_indices; }
-  Vertex &vertex(size_t i) { return m_vertices[i]; }
   const Vertex &vertex(size_t i) const { return m_vertices[i]; }
   IndexType index(size_t i) const { return m_indices[i]; }
-  size_t size() const { return m_vertices.size(); }
+  size_t numberOfVertices() const { return m_vertices.size(); }
   size_t numberOfIndices() const { return m_indices.size(); }
 };
+
+} // namespace b3
 
 #endif

@@ -1,10 +1,12 @@
-#ifndef __COMMON_HPP__
+﻿#ifndef __COMMON_HPP__
 #define __COMMON_HPP__
 
 #include <volk.h>
 
-#define VMA_VULKAN_VERSION 1004000 // Vulkan 1.4
+#define VMA_VULKAN_VERSION 1003000 // Vulkan 1.3
 #include "vk_mem_alloc.h"
+
+#include <vulkan/vk_enum_string_helper.h>
 
 #define GLM_FORCE_RADIANS
 #define GLM_FORCE_DEPTH_ZERO_TO_ONE
@@ -17,6 +19,12 @@
 #include <glm/vec3.hpp>
 #include <glm/vec4.hpp>
 
+#if defined(DEBUG) || defined(_DEBUG)
+#define SPDLOG_ACTIVE_LEVEL SPDLOG_LEVEL_DEBUG
+#else
+#define SPDLOG_ACTIVE_LEVEL SPDLOG_LEVEL_INFO
+#endif 
+#include <spdlog/sinks/basic_file_sink.h>
 #include <spdlog/fmt/fmt.h>
 #include <spdlog/spdlog.h>
 

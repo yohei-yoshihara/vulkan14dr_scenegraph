@@ -1,15 +1,25 @@
-= Vulkan1.4 + Dynamic Rendering + Sync2 + Extended Dynamic State
+﻿= Vulkan1.3 + Dynamic Rendering
 
-**Update:**
-Now that macOS supports Vulkan 1.4, I’ve switched this project over to Vulkan 1.4.
+Simple scene graph rendering engine.
+This engine is based on Khronos' sample code Triangle 1.3.
 
-This sample is based on Khronos' sample code Triangle 1.3, but works with Vulkan 1.2 by enabling extensions, and also allows for scene graph display.
+image:https://github.com/user-attachments/assets/791c1948-82c2-4dad-b219-585c0dab32ab[]
 
-image::https://github.com/user-attachments/assets/3ff90862-e673-4f98-a79c-e360ec8a6fdf[Screenshot]
+== TODO
 
-The differences from the Khronos sample are as follows:
+* [*] MSAA
+* [*] Shadow Mapping
+* [*] Keyboard/Mouse
+* [*] PCF
+* [*] Frustum Culling
+* [*] Texture Mapping
+* [ ] Load Model Data
+* [ ] Font Rendering
+* [ ] GUI
+ 
+== References
 
-* Vulkan 1.3 and later versions now run on Vulkan 1.2 + Extension. This means it also works on Mac. The Extension is loaded with volk.
-* Modified to use Vk-Bootstrap.
-* Modified to use VMA (Vulkan Memory Allocator).
-* Added the ability to display arbitrary shapes in the scene by adding nodes.
+* https://github.com/KhronosGroup/Vulkan-Samples[Khronos Vulkan Samples]
+* https://github.com/SaschaWillems/Vulkan[Sascha Willems Vulkan Samples]
+* https://github.com/stuartcaunt/isgl3d[isgl3d (Mesh Generation)]
+

@@ -1,7 +1,9 @@
 build/
+build*/
 out/
 ext/
 .cache
 .DS_Store
 *.log
 .vs/
+**/.cache/
