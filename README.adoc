@@ -19,6 +19,7 @@ image:https://github.com/user-attachments/assets/791c1948-82c2-4dad-b219-585c0da
  
 == References
 
+* https://vulkan-tutorial.com/[Vulkan Tutorial]
 * https://github.com/KhronosGroup/Vulkan-Samples[Khronos Vulkan Samples]
 * https://github.com/SaschaWillems/Vulkan[Sascha Willems Vulkan Samples]
 * https://github.com/stuartcaunt/isgl3d[isgl3d (Mesh Generation)]
