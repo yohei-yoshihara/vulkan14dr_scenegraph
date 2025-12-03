@@ -136,11 +136,11 @@ void Engine::initDevice() {
   };
 
   VmaAllocatorCreateInfo createInfo{
-      .vulkanApiVersion = VK_API_VERSION_1_3,
       .physicalDevice = m_context.physicalDevice,
       .device = m_context.device,
       .pVulkanFunctions = &functions,
       .instance = m_context.instance,
+      .vulkanApiVersion = VK_API_VERSION_1_3,
   };
   VK_CHECK(vmaCreateAllocator(&createInfo, &m_context.vmaAllocator));
 }
